@@ -25,12 +25,12 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-
+        'wizard/orderview.xml',
         'views/menu_action_final.xml',
         'views/properties_view_final.xml',
         'views/owner_view_final.xml',
         'views/customer_view_final.xml',
-        
+
         'reports/report.xml',
         'reports/property_card.xml',
         

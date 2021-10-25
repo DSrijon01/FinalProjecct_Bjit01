@@ -55,6 +55,10 @@
        name="Customer"
        parent="people_parent_root"
        action="customers_action_srijon"/>
-
+    
+    <menuitem name="Order List" 
+       id="menu_create_order" 
+       parent="openhouse_srijon"
+       action="action_create_order_srijon"/>
     
 </odoo>
