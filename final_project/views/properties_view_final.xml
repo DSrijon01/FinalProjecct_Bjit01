@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This will show the tree views in the main page of Properties--> 
+    <record id="properties_tree" model="ir.ui.view">
+        <field name="name">properties.tree</field>
+        <field name="model">real.estate</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="status==1">
+                <field name="name" widget="handle"/>
+                <field name="surgeprice" widget='statinfo'/>
+                <field name="expected_price"/>
+                <field name="avaiable_from" decoration-it="1"/>
+                <field name="property_image" widget = "image"/>
+                <field name="status" widget="badge"/>
+                
+                    
+                
+                
+            </tree>
+        </field>
+    </record>
+    
+    <!-- This creates the form and group view For Properties -->  
+    <record id="properties_form_srijon" model="ir.ui.view">
+        <field name="name">properties.form</field>
+        <field name="model">real.estate</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- <button name="print_report" string="Print" type="object" class="oe_highlight"/> -->
+                    <button name="make_available" string="Make Available" type="object" />
+                    <button name="make_draft" string="In Progress" type="object" />
+                    <button name="make_sold" string="Sold" type="object" />
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="pp_address"/>
+                            <field name="avaiable_from"/>
+                            
+                        </group>
+                        <group>
+                           <field name="expected_price"/>
+                           
+                           <!-- <field name="pdocument_name" invisible="1"/> -->
+                           
+                        </group>
+                        <group>
+                         
+                         <field name="property_image" widget = "image"/>
+                         
+                        </group>
+                        <group>
+                         
+                            <field name="owner_bio"/>
+                            
+                        </group>
+                           
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                                
+                                
+                            </group>
+                        </page>
+                        <page string="Other Info">
+                            <group>
+                                <field name="documents"/>
+                                
+                                
+                            </group>
+                        </page>
+                        <!-- <page string="Model Viewer">
+                            <group>
+                                <field name="model_viewer" widget="model_viewer"/>
+                                
+                                
+                            </group>
+                        </page> -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- This is for the graph view for the properties  -->
+    <record id="view_properties_graph" model="ir.ui.view">
+        <field name="model">real.estate</field>
+            <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="expected_price"/>
+            </graph>
+        </field>
+    </record>
+
+
+    
+    
+</odoo>

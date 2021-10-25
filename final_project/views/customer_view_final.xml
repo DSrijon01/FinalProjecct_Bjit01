@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <!-- This will show the tree views in the main page of Customers (need to add subtotal field)-->  
+
+    <record id="customers_tree_agent" model="ir.ui.view">
+        <field name="name">customers.tree</field>
+        <field name="model">customer.estate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="trader"/>
+                <field name="customerprofile_image"/>
+                <field name="buy_property"/>
+                <!-- <field name="related_owner"/> -->
+                <!-- <field name="total"/> -->
+                <!-- <field name="agentemail_address"/> -->
+                
+            </tree>
+        </field>
+    </record> 
+
+
+
+
+
+<!-- This creates the form and group view For Customer (need to add subtotal field)-->  
+<record id="customer_form_srijon" model="ir.ui.view">
+    <field name="name">customers.form</field>
+    <field name="model">customer.estate</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="trader"/>
+                        <field name="customerprofile_image"/>
+                        <!-- <field name="total"/> -->
+                        <field name="related_owner"/>
+                    </group>
+                    <notebook>
+                      <page string="Ordered Properties">
+                         <field name="buy_property"/>
+                            
+                        
+                        </page>
+                    </notebook>
+                    
+                    
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    
+</odoo>

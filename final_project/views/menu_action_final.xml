@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Actions For Proerties -->
+    <record id='openhouse_properties_action_srijon' model='ir.actions.act_window'>
+        <field name="name">OpenHouse Properties</field>
+        <field name="res_model">real.estate</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+    <!-- Action for Owner -->
+    <record id="owners_action_srijon" model="ir.actions.act_window">
+        <field name="name">Owners</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.owner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register as a Owner 
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for Customer -->
+    <record id="customers_action_srijon" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.estate</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your Agent Customer
+            </p>
+        </field>
+    </record>
+
+    <!-- Parent Menu -->
+    <menuitem name="OpenHouse" id="openhouse_srijon"/>
+
+    <!-- Menu Catagories -->
+    <menuitem id="property_listing"
+    name="Properties"
+    parent="openhouse_srijon"
+    action="openhouse_properties_action_srijon"/>
+
+    <menuitem id="people_parent_root"
+    name="People"
+    parent="openhouse_srijon"/>
+
+    <menuitem id="owner_listing"
+        name="Owner"
+        parent="people_parent_root"
+        action="owners_action_srijon"/>
+    
+    <menuitem id="customer_listing"
+       name="Customer"
+       parent="people_parent_root"
+       action="customers_action_srijon"/>
+
+    
+</odoo>

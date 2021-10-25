@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- <report
+     id = "report_property_card"
+     string = "Property Details"
+     model = "real.estate"
+     report_type = "qweb-pdf"
+     name = "final_project.report_property"
+     file = "final_project.report_property"/> -->
+
+     <!-- <report
+        id="report_property_card_image"
+        string="Property Card (Image)"
+        model="real.estate"
+        report_type="qweb-pdf"
+        name="final_project.report_property_image"
+        file="final_project.report_property_image"/> -->
+
+        <record id="action_report_property_overview" model="ir.actions.report">
+            <field name="name">Property Overview</field>
+            <field name="model">real.estate</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">final_project.report_property_card</field>
+            <field name="report_file">final_project.report_property_card</field>
+            <field name="binding_model_id" ref="model_real_estate"/>
+            <field name="binding_type">report</field> 
+        </record>
+
+</odoo>
