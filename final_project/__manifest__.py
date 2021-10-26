@@ -20,16 +20,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','website_slides'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        # 'data/mail_template.xml',
         'wizard/orderview.xml',
         'views/menu_action_final.xml',
         'views/properties_view_final.xml',
         'views/owner_view_final.xml',
         'views/customer_view_final.xml',
+        'views/website_form.xml',
 
         'reports/report.xml',
         'reports/property_card.xml',

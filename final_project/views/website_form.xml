@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- First menu  -->
+    <!-- <record id="menu_property_form12" model="website.menu">
+        <field name="name">Add Property</field>
+        <field name="url">/property_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+    </record> -->
+
+    <!-- Second Menu  -->
+    <!-- <record id="menu_property_form13" model="website.menu">
+        <field name="name">Register As a Owner</field>
+        <field name="url">/owner_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        
+    </record> -->
+
+    <!-- Third  Menu-->
+    <record id="menu_property_form14" model="website.menu">
+        <field name="name">Register As a Customer</field>
+        <field name="url">/customer_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        
+    </record>
+     
+    <!-- Warehouse List Form -->
+
+    <!-- <template id="warehouse_list" name="Create Product">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                         <table class="table table-condensed" style="border: 3px solid black !important;">
+                                        <t t-foreach="productvalue_list" t-as="app">
+                                            <tr>
+                                                
+                                                <td>
+                                                    <p>Warehouse Name:<t t-esc="app['wname']"/></p>
+                                                    <p>Location:<t t-esc="app['wlocation']"/></p>
+                                                    <p>Available Products:<t t-esc="app['related_product']"/></p>
+                                                </td>
+                                                
+                                                 
+                                                
+                                            </tr>
+
+                                        </t>
+                         </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template> -->
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- Creating a Form Customer-->
+    <template id="create_customer" name="Create Customer">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/webcustomer" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="trader" class="control-label">Name</label>
+                                <input type="text" name="trader" t-att-value="trader" id="trader"
+                                       class="form-control" placeholder="e.g. John Doe" required="required"/>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="pemail " class="control-label">Email</label>
+                                <input type="email " name="pemail" t-att-value="pemail" id="pemail"
+                                       class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="status " class="control-label">Product Status</label>
+                                <select name="status" t-att-value="status" id="status">
+                                    <option value="available">Available</option>
+                                    <option value="unavailable">Unavailable</option>
+                                    
+                                </select>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="status" class="control-label">status</label>
+                                <input type="status" name="status" t-att-value="status" id="status"
+                                       class="form-control" required="required"/>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="doctor_id" class="control-label">Doctor</label>
+                                <select name="doctor_id" class="form-control link-style">
+                                    <t t-foreach='doctor_rec' t-as="doctor">
+                                        <option t-esc='doctor.name' t-att-value='doctor.id'/>
+                                    </t>
+                                </select>
+                            </div> -->
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <record id="customer_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/customer-thank-you</field>
+        <field name="website_published">True</field>
+        <field name="key">final_project.customer_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="final_project.customer_thanks">
+                <t t-call="website.layout">
+                  <div id="wrap">
+                    <div class="container">
+                        <h1>Thanks!</h1>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="alert alert-success" role="status">
+                                    Your Resigtration Has Been Completed Successfully.
+                                </div>
+                                <p>
+                                    Visit the Property Listing
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+</odoo>
