@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','website_slides'],
+    'depends': ['base','website_slides', 'sale'],
 
     # always loaded
     'data': [
@@ -32,6 +32,7 @@
         'views/owner_view_final.xml',
         'views/customer_view_final.xml',
         'views/website_form.xml',
+        'views/sale_inheritance.xml',
 
         'reports/report.xml',
         'reports/property_card.xml',
