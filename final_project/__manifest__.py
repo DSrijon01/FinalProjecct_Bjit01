@@ -33,6 +33,7 @@
 
         'reports/report.xml',
         'reports/property_card.xml',
+        'reports/order_details_wizard.xml',
         
 
         

@@ -17,6 +17,10 @@
         name="final_project.report_property_image"
         file="final_project.report_property_image"/> -->
 
+        
+        
+        
+
         <record id="action_report_property_overview" model="ir.actions.report">
             <field name="name">Property Overview</field>
             <field name="model">real.estate</field>
@@ -26,5 +30,7 @@
             <field name="binding_model_id" ref="model_real_estate"/>
             <field name="binding_type">report</field> 
         </record>
+
+        
 
 </odoo>
