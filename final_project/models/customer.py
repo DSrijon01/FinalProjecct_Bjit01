@@ -10,7 +10,7 @@ class SaleOrderInherit(models.Model):
     _inherit = 'sale.order'
     trader = fields.Char(string='Open House Customer Name')
     buy_property =  fields.Many2many('real.estate', string='Ordered Property')
-    
+
 class problemsrijon(models.Model):
     _name = 'customer.estate'
     # _inherit = {'real.owner': 'related_owner'}

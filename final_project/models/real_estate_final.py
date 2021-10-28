@@ -16,11 +16,8 @@ class RealEstate(models.Model):
         
     ]
 
-
-
-    
-
-
+    ##database Fileds
+    pp_id=fields.Integer(string = 'Properrty ID')
     name = fields.Char(string ='Title')
     active = fields.Boolean(default=True)
     description = fields.Char(string='Description')
@@ -35,8 +32,6 @@ class RealEstate(models.Model):
          ('sold', 'Sold')],
         'State', default="draft")
     documents = fields.Binary(string='Documents', help ="Place Your Affiliated Documents Here")
-    # model_viewer = fields.Binary(string="Model Viewer")    
-    # pdocument_name = fields.Char(string ="File Name")
 
     rent_count = fields.Integer(compute="_compute_rent_count") 
 
@@ -54,25 +49,12 @@ class RealEstate(models.Model):
         self.ensure_one()
         self.status = 'sold'
 
-    ##Printing Button Functionality 
-    # @api.multi
-    # def print_report(self):
-
-
-    
     ## for computed field. 
     surgeprice = fields.Float(compute = "_compute_total", inverse ="_inverse_total", string = 'Future Price')
     
     ##database relationship
     ##many to many with the owners
     owner_bio =  fields.Many2many('real.owner',string='Owning')
-
-
-    ##many 2 one view with owner
-    # owner_info =  fields.Many2one('real.owner',string='Owning')
-    
-    # partner_id = fields.Many2one('res.partner',string="Partner")
-    # newid = fields.Many2many('res.users', string="Working")
     
     ##Computed Field Logic. 
     @api.depends('expected_price')

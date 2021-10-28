@@ -10,82 +10,68 @@
         <field name="binding_model_id" ref="model_order_list_wizard"/>
         <field name="binding_type">report</field> 
     </record>
+
     
+
+
     <template id="report_property_details">
-        <t t-call="web.html_container">
-            <t t-call="web.internal_layout">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.basic_layout">
                 <div class="page">
                     <div class="oe_structure"/>
-                    <h3>
-                        <center>Open House detail</center>
-                    </h3>
-                    <br/>
-                    <br/>
-                    <!-- <div class="row">
-                        <div class="col-6">
-                            Date from:
-                            <span t-esc="datas['date_from']"/>
-                        </div>
-                        <div class="col-6">
-                            Courses:
-                            <span t-esc="datas['courses']"/>
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-6">
-                            Date to:
-                            <span t-esc="datas['date_to']"/>
-                        </div>
-                        <div class="col-6">
-                            Responsible:
-                            <span t-esc="datas['responsbile']"/>
+                        <div class="col-xs-8">
+                            <table class="table table-condensed" style="border: 3px solid black !important;">
+                                <tr>
+                                    <!-- <td width="40%">
+                                        <p style="text-align:center;padding-top:10px;">
+                                            <img t-if="not o.property_image"
+                                                 t-att-src="'/web/static/src/img/placeholder.png'" height="140"
+                                                 border="1" width="120"/>
+                                            <img t-if="o.property_image"
+                                                 t-att-src="'data:image/png;base64,%s' % to_text(o.property_image)"
+                                                 height="140" border="1" width="120"/>
+                                        </p>
+                                    </td> -->
+                                    <td width="60%">
+                                        <table>
+                                            <!-- <tr>
+                                                <td colspan="3" class="text-center">
+                                                    <span t-field="o.oname"/>
+                                                </td>
+                                            </tr> -->
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <strong>Property:</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>:</span>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="o.form_data['property_ids']"/>
+                                                </td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td>
+                                                    <span>
+                                                        <strong>Status:</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>:</span>
+                                                </td>
+                                                <td>
+                                                    <span t-field="o.status"/>
+                                                </td>
+                                            </tr> -->
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <br/>
-
-                    <table class="table table-condensed table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Session Name</th>
-                                <th>Start date</th>
-                                <th>Duration</th>
-                                <th>No. of Seats</th>
-                                <th>Instructor</th>
-                                <th>Total Attendees</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-as="course" t-foreach="docs">
-                                <tr>
-                                    <td colspan="6">
-                                        <center>
-                                            <span t-field="course.course_name"/>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr t-as="session" t-foreach="course.session_ids">
-                                    <td>
-                                        <span t-field="session.name"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="session.start_date"/>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-field="session.duration"/>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-field="session.seats"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="session.instructor_id"/>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-esc="session.number_of_attendees()"/>
-                                    </td>
-                                </tr>
-                            </t>
-                        </tbody>
-                    </table> -->
                 </div>
             </t>
         </t>

@@ -6,40 +6,49 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class OpenHouse(http.Controller):
 
-    @http.route('/customer_webform', type="http", auth="public", website=True)
-    def customer_webform(self, **kw):
-        print("Execution Here.........................")
-        return http.request.render('final_project.create_customer', {'trader': 'Odoo Mates Test 123'
-                                                                      })
+    # @http.route('/customer_webform', type="http", auth="public", website=True)
+    # def customer_webform(self, **kw):
+    #     print("Execution Here.........................")
+    #     return http.request.render('final_project.create_customer', {'trader': 'Odoo Mates Test 123'
+    #                                                                   })
 
-    @http.route('/create/webcustomer', type="http", auth="public", website=True)
-    def create_webcustomer(self, **kw):
-        print("Data Received.....", kw)
-        request.env['customer.estate'].sudo().create(kw)
-        return request.render("final_project.customer_thanks", {})
+    # @http.route('/create/webcustomer', type="http", auth="public", website=True)
+    # def create_webcustomer(self, **kw):
+    #     print("Data Received.....", kw)
+    #     request.env['customer.estate'].sudo().create(kw)
+    #     return request.render("final_project.customer_thanks", {})
+
+    # @http.route('/create/webcustomer', type="http", auth="public", website=True)
+    # def create_webcustomer(self, **kw):
+    #     http.request.env['res.users'].sudo().create({
+    #         'name': 'testa',
+    #         'login': 'testa',
+    #     })
+    #     return request.render("final_project.customer_thanks", {})
 
     # Fetching Data
-    # @http.route('/warehouse_webform', website=True, auth='public')
-    # def hospital_patient(self, **kw):
-    #     # return "Thanks for watching"
-    #     patients = request.env['warehouse.list'].sudo().search([])
-    #     productvalue_list = []
-    #     for app in patients:
-    #         vals = {
-    #           'wname':  app.wname,               
-    #           'wlocation': app.wlocation,
-    #           'related_product': app.related_product,
-    #         }
-    #         productvalue_list.append(vals)
-    #     print("ProductDeatils", productvalue_list)
-    #     # return {
+    @http.route('/warehouse_webform', website=True, auth='user')
+    def hospital_patient(self, **kw):
+        # return "Thanks for watching"
+        patients = request.env['real.estate'].sudo().search([])
+        productvalue_list = []
+        for app in patients:
+            vals = {
+              'name':  app.name,               
+              'expected_price': app.expected_price,
+              'status': app.status,
+              'property_image': app.property_image,
+            }
+            productvalue_list.append(vals)
+        print("ProductDeatils", productvalue_list)
+        # return {
             
-    #     #     'productvalue_list': productvalue_list,
-    #     # }
-    #     return request.render("mini_project_01.warehouse_list", {
-    #         'patients': patients,
-    #         'productvalue_list': productvalue_list
-    #     })
+        #     'productvalue_list': productvalue_list,
+        # }
+        return request.render("final_project.warehouse_list", {
+            'patients': patients,
+            'productvalue_list': productvalue_list
+        })
 
 
 

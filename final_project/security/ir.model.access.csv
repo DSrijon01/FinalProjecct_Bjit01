@@ -1,3 +1,16 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 acl_openhouse,real.estate_default,model_real_estate,group_open_user,1,0,0,0
+acl_openhouse_customer,customer.estate_customer,model_customer_estate,group_open_user,1,1,0,0
+
+acl_openhouse_owner,real.estate_owner,model_real_estate,group_open_owner,1,1,1,1
+acl_openhouse_owners,real.owner_owner,model_real_owner,group_open_owner,1,1,1,1
+
+acl_openhouse_customer,customer.estate_customer,model_customer_estate,group_open_customer,1,1,1,0
+acl_openhouse_customers,real.estate_customer,model_real_estate,group_open_customer,1,0,0,0
+acl_openhouse_customerss,real.owner_customer,model_real_owner,group_open_customer,1,1,0,0
+
+acl_openhouse_managers,real.owner_manager,model_real_owner,group_open_manager,1,1,1,1
+acl_openhouse_managerss,customer.estate_manager,model_customer_estate,group_open_manager,1,1,1,1
+acl_openhouse_managersss,order.list.wizard_manager,model_order_list_wizard,group_open_manager,1,1,1,1
 acl_openhouse_manager,real.estate_manager,model_real_estate,group_open_manager,1,1,1,1
+

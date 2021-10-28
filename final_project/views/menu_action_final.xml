@@ -42,18 +42,18 @@
     parent="openhouse_srijon"
     action="openhouse_properties_action_srijon"/>
 
-    <menuitem id="people_parent_root"
+    <!-- <menuitem id="people_parent_root"
     name="People"
-    parent="openhouse_srijon"/>
+    parent="openhouse_srijon"/> -->
 
     <menuitem id="owner_listing"
         name="Owner"
-        parent="people_parent_root"
+        parent="openhouse_srijon"
         action="owners_action_srijon"/>
     
     <menuitem id="customer_listing"
        name="Customer"
-       parent="people_parent_root"
+       parent="openhouse_srijon"
        action="customers_action_srijon"/>
     
     <menuitem name="Order List" 

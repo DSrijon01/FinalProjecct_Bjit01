@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- First menu  -->
-    <!-- <record id="menu_property_form12" model="website.menu">
-        <field name="name">Add Property</field>
-        <field name="url">/property_webform</field>
-        <field name="parent_id" ref="website.main_menu"/>
-    </record> -->
+    
 
-    <!-- Second Menu  -->
-    <!-- <record id="menu_property_form13" model="website.menu">
-        <field name="name">Register As a Owner</field>
-        <field name="url">/owner_webform</field>
+    <!--Menu-->
+    <record id="menu_product_form13" model="website.menu">
+        <field name="name">Properties</field>
+        <field name="url">/warehouse_webform</field>
         <field name="parent_id" ref="website.main_menu"/>
-        
-    </record> -->
-
-    <!-- Third  Menu-->
-    <record id="menu_property_form14" model="website.menu">
-        <field name="name">Register As a Customer</field>
-        <field name="url">/customer_webform</field>
-        <field name="parent_id" ref="website.main_menu"/>
-        
+        <!-- <field name="sequence">55</field> -->
     </record>
      
-    <!-- Warehouse List Form -->
+    <!-- Property List Form -->
 
-    <!-- <template id="warehouse_list" name="Create Product">
+    <template id="warehouse_list" name="Create Product">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="oe_structure">
@@ -33,11 +20,31 @@
                          <table class="table table-condensed" style="border: 3px solid black !important;">
                                         <t t-foreach="productvalue_list" t-as="app">
                                             <tr>
+                                                <td> Property Name: </td>
+                                                <td> Price: </td>
+                                                <td> Status: </td>
+                                                <td> Pcitures: </td>
+                                            </tr>
+                                            <tr>
                                                 
                                                 <td>
-                                                    <p>Warehouse Name:<t t-esc="app['wname']"/></p>
-                                                    <p>Location:<t t-esc="app['wlocation']"/></p>
-                                                    <p>Available Products:<t t-esc="app['related_product']"/></p>
+                                                    <t t-esc="app['name']"/>
+                                                </td>
+                                                <td>    
+                                                    <t t-esc="app['expected_price']"/>
+                                                </td>
+                                                <td>    
+                                                    <t t-esc="app['status']"/>
+                                                </td>
+                                                <td width="40%">
+                                                    <p style="text-align:center;padding-top:10px;">
+                                                        <img t-if="not app['property_image']"
+                                                             t-att-src="'/web/static/src/img/placeholder.png'" height="140"
+                                                             border="1" width="120"/>
+                                                        <img t-if="app['property_image']"
+                                                             t-att-src="'data:image/png;base64,%s' % to_text(app['property_image'])"
+                                                             height="140" border="1" width="120"/>
+                                                    </p>
                                                 </td>
                                                 
                                                  
@@ -51,7 +58,7 @@
                 </div>
             </div>
         </t>
-    </template> -->
+    </template>
 
 
 

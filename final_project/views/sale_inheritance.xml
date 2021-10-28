@@ -17,10 +17,24 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']" position="replace">
-                <field name="buy_property"/>
-            </xpath>
+            <notebook position="inside">
+                <page string="Sale Order For Property">
+                    <group>
+                        <field name="buy_property">
+
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+
+            <!-- <xpath expr="//field[@name='order_line']" position="after">
+                
+                <field name="buy_property">
+                </field>
+            </xpath> -->
 
         </field>
     </record>
+
+
 </odoo>

@@ -7,7 +7,7 @@
         <field name="model">real.estate</field>
         <field name="arch" type="xml">
             <tree decoration-danger="status==1">
-                <field name="name" widget="handle"/>
+                <field name="name"/>
                 <field name="surgeprice" widget='statinfo'/>
                 <field name="expected_price"/>
                 <field name="avaiable_from" decoration-it="1"/>
@@ -38,6 +38,7 @@
                     
                     <group>
                         <group>
+                            <field name="pp_id"/>
                             <field name="name"/>
                             <field name="pp_address"/>
                             <field name="avaiable_from"/>
